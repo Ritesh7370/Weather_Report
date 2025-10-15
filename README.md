@@ -1,145 +1,58 @@
-Project Overview
 
-This Power BI report presents a 7-day weather forecast combined with air quality indicators to help monitor local environmental conditions. The dashboard displays temperature trends, humidity, wind speed, pressure, UV index, chance of rain, sunrise/sunset times, and pollutant readings (PM10, PM2.5, CO, NO2, SO2), along with a consolidated AQI card.
 
-Screenshot
+# 🌦 Weather Dashboard - Gurgaon
 
+This project visualizes real-time weather data in an interactive and visually appealing dashboard format.  
+It provides detailed insights into temperature, humidity, air quality, sunrise/sunset timings, and rain probabilities for the upcoming days.
 
+---
 
+## 📸 Dashboard Preview
 
- **Live Dashboard:** [View on Power BI Service](https://app.powerbi.com/links/your-dashboard-link)
+![Weather Dashboard](./weather_dashboard.png)
 
+---
 
+## 📊 Key Features
 
-Key Features
+- *Current Weather:* Displays temperature, condition (mist, rain, etc.), and comparison across cities (Delhi, Gurgaon, Noida).  
+- *Forecast Weather:* Shows temperature trends for upcoming days with a line graph.  
+- *Air Quality:* Indicates pollutant levels (O₃, SO₂, PM₂.₅, PM₁₀, CO, NO₂) with a health rating indicator.  
+- *Environmental Data:* Includes humidity, wind speed, visibility, pressure, UV index, and precipitation.  
+- *Sunrise & Sunset:* Provides accurate local sunrise and sunset timings.  
+- *Rain Probability:* Displays percentage chances of rain across the week.
 
-7-day temperature trend line with daily high/low values.
+---
 
-KPI cards for current temperature, humidity, wind speed, visibility, pressure, UV index, and precipitation.
+## 🧠 Insights
 
-Air quality ring chart and detailed pollutant counts (PM10, PM2.5, CO, NO2, SO2).
+- The current air quality is marked as *Unhealthy (AQI: 196)*.  
+- *CO levels (723)* are significantly high, which requires attention.  
+- *High humidity (67%)* with mild mist conditions.  
+- *Temperature forecast* indicates a gradual drop from 35°C to around 27°C over the week.  
+- *Rain probability* peaks on *Saturday (89%)*.
 
-Chance-of-rain bar chart for each of the seven days.
+---
 
-Sunrise and sunset times panel.
+## 🛠 Tools Used
 
-Dark theme with clean, card-based layout for quick insights.
+- *Power BI / Tableau* (for visualization)  
+- *OpenWeather API / AQI API* (for data collection)  
+- *Excel / CSV* (for data preprocessing)
 
-Interactive tooltips, slicers, and filters for exploring date ranges and locations.
+---
 
-Data Sources
+## 📂 File Info
 
-Weather forecast API (e.g., OpenWeatherMap, Weatherbit) — historical and forecast data.
+- *Filename:* weather_dashboard.png  
+- *Format:* PNG  
+- *Resolution:* 1352 × 768 px  
+- *Last Updated:* 24 July  
 
-Air quality API (e.g., OpenAQ, AirVisual) — pollutant concentrations and AQI.
+---
 
-Local CSV or Excel files for static datasets.
+## 👨‍💻 Author
 
-Note: Replace the example APIs above with the actual data providers you used. Save API keys securely (do not commit them to GitHub).
-
-Data Model (recommended)
-
-WeatherForecast (Date, Location, TempMax, TempMin, TempAvg, Precipitation, RainProbability, WeatherIcon)
-
-CurrentConditions (Timestamp, Location, Temperature, Humidity, WindSpeed, Visibility, Pressure, UVIndex)
-
-AirQuality (Timestamp, Location, PM10, PM2_5, CO, NO2, SO2, AQI)
-
-Relationships:
-
-WeatherForecast[Date] → AirQuality[Date] (many-to-many via a Date table)
-
-Location as a lookup table if multiple cities are supported
-
-Power Query & ETL
-
-Use Power Query to:
-
-Normalize date/time fields and convert to local timezone.
-
-Pivot/unpivot pollutant measurements when necessary.
-
-Merge API responses into clean tables.
-
-Cache API responses into local files during development.
-
-Example DAX Measures
-Current Temperature =
-CALCULATE(
-    AVERAGE(CurrentConditions[Temperature]),
-    LASTDATE(CurrentConditions[Timestamp])
-)
-
-
-SevenDayAvgTemp =
-CALCULATE(
-    AVERAGE(WeatherForecast[TempAvg]),
-    DATESINPERIOD(DateTable[Date], LASTDATE(DateTable[Date]), -7, DAY)
-)
-
-
-AQI_Status =
-SWITCH(
-    TRUE(),
-    MAX(AirQuality[AQI]) <= 50, "Good",
-    MAX(AirQuality[AQI]) <= 100, "Moderate",
-    MAX(AirQuality[AQI]) <= 200, "Unhealthy",
-    "Hazardous"
-)
-Visuals & Design
-
-Use built-in KPI cards for top-line metrics.
-
-Line chart for temperature trends (use markers for daily highs/lows).
-
-Donut or radial gauge for overall AQI with center KPI.
-
-Bar chart for rain probabilities with percent labels.
-
-Small multiples or card grids for pollutant details.
-
-Apply consistent font sizing and spacing; keep the dark theme accessible (contrast ratios).
-
-Deployment
-
-Save the .pbix file and assets (images) in the repo.
-
-Publish to Power BI Service (workspace) and configure scheduled data refresh (use gateway if on-prem data).
-
-Share report/dashboard with stakeholders and set row-level security if needed.
-
-Usage
-
-Open the report and use slicers to change the location or date range.
-
-Hover over charts for tooltips with source timestamps and raw values.
-
-Security & Best Practices
-
-Store API keys in a secure store (Azure Key Vault, environment variables) — never include them in the repository.
-
-Document refresh frequency and data retention policies.
-
-Credits
-
-Built with Power BI, DAX, and Power Query. Icons and visuals courtesy of open-source icon packs (if used).
-
-License
-
-This repository is released under the MIT License. See LICENSE for details.
-
-Contact
-
-Maintainer: Your Name — rraaz73700@gmail.com
-
-If you want, I can also:
-
-Generate a short one-line README for the repo home.
-
-Create a ready-to-paste .md file with your actual repo name, screenshot, and contact details.
-
-Add a LICENSE file (MIT/Apache/GPL) and a sample .gitignore for Power BI files.
-
-Done — I created a README for your GitHub repo in the canvas (titled README.md - 7-Day Weather Dashboard).
-
-Open the document on the left and tell me if you want it shortened, translated, or tailored with your repo name, screenshot file, or contact details.
+*Created by:* [Your Name]  
+*Role:* Data Analyst / MIS Executive  
+*Date:* 24 July 2025
