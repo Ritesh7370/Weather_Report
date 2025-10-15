@@ -9,7 +9,7 @@ It provides detailed insights into temperature, humidity, air quality, sunrise/s
 
 ## 📸 Dashboard Preview
 
-![Weather Dashboard](./weather_dashboard.png)
+![Weather Dashboard](https://github.com/yourusername/yourrepo/blob/main/weather_dashboard.png?raw=true)
 
 ---
 
