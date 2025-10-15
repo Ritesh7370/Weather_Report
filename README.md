@@ -1,58 +1,82 @@
+# 7-Day Weather Forecast & Air Quality Dashboard
+
+Power BI Project — Interactive dashboard visualizing 7-day weather forecast and air quality for Gurgaon.
+
+🌦️ Project Overview
+
+This Power BI report presents a 7-day weather forecast combined with air quality indicators to monitor environmental conditions in Gurgaon. The dashboard provides detailed insights on temperature trends, humidity, wind speed, pressure, UV index, precipitation, sunrise/sunset times, and pollutant readings (PM10, PM2.5, CO, NO2, SO2), along with an overall AQI status indicator.
+
+📸 Dashboard Screenshot
 
 
-# 🌦 Weather Dashboard - Gurgaon
 
-This project visualizes real-time weather data in an interactive and visually appealing dashboard format.  
-It provides detailed insights into temperature, humidity, air quality, sunrise/sunset timings, and rain probabilities for the upcoming days.
 
----
+(If the image doesn’t appear, check that the screenshot file is uploaded to the /assets folder in your GitHub repo.)
 
-## 📸 Dashboard Preview
+🔑 Key Features
 
-![Weather Dashboard](https://github.com/yourusername/yourrepo/blob/main/weather_dashboard.png?raw=true)
+🌡️ Current weather conditions — temperature, humidity, visibility, pressure, wind speed, and UV index.
 
----
+📈 7-day forecast with temperature trend line and weather icons.
 
-## 📊 Key Features
+🌅 Sunrise & sunset timing panel.
 
-- *Current Weather:* Displays temperature, condition (mist, rain, etc.), and comparison across cities (Delhi, Gurgaon, Noida).  
-- *Forecast Weather:* Shows temperature trends for upcoming days with a line graph.  
-- *Air Quality:* Indicates pollutant levels (O₃, SO₂, PM₂.₅, PM₁₀, CO, NO₂) with a health rating indicator.  
-- *Environmental Data:* Includes humidity, wind speed, visibility, pressure, UV index, and precipitation.  
-- *Sunrise & Sunset:* Provides accurate local sunrise and sunset timings.  
-- *Rain Probability:* Displays percentage chances of rain across the week.
+💨 Air quality visualization with pollutant details (PM10, PM2.5, CO, NO2, SO2).
 
----
+☔ Chance of rain chart for all forecasted days.
 
-## 🧠 Insights
+🎨 Modern dark-themed UI with responsive card design and smooth layout.
 
-- The current air quality is marked as *Unhealthy (AQI: 196)*.  
-- *CO levels (723)* are significantly high, which requires attention.  
-- *High humidity (67%)* with mild mist conditions.  
-- *Temperature forecast* indicates a gradual drop from 35°C to around 27°C over the week.  
-- *Rain probability* peaks on *Saturday (89%)*.
+🧠 Tools & Techniques
 
----
+Power BI Desktop — dashboard design and data modeling.
 
-## 🛠 Tools Used
+DAX — for custom calculations and AQI classifications.
 
-- *Power BI / Tableau* (for visualization)  
-- *OpenWeather API / AQI API* (for data collection)  
-- *Excel / CSV* (for data preprocessing)
+Power Query — for data cleaning and transformation.
 
----
+APIs — to fetch weather and air quality data (e.g., OpenWeatherMap, AirVisual).
 
-## 📂 File Info
+🧩 Example DAX Measures
+Current Temperature =
+CALCULATE(
+    AVERAGE(CurrentConditions[Temperature]),
+    LASTDATE(CurrentConditions[Timestamp])
+)
 
-- *Filename:* weather_dashboard.png  
-- *Format:* PNG  
-- *Resolution:* 1352 × 768 px  
-- *Last Updated:* 24 July  
 
----
+AQI_Status =
+SWITCH(
+    TRUE(),
+    MAX(AirQuality[AQI]) <= 50, "Good",
+    MAX(AirQuality[AQI]) <= 100, "Moderate",
+    MAX(AirQuality[AQI]) <= 200, "Unhealthy",
+    "Hazardous"
+)
+⚙️ How to Use
 
-## 👨‍💻 Author
+Clone this repository:
 
-*Created by:* [Your Name]  
-*Role:* Data Analyst / MIS Executive  
-*Date:* 24 July 2025
+git clone https://github.com/Ritesh7370/Weather_Report.git
+
+Open the .pbix file in Power BI Desktop.
+
+Connect your weather and air quality data sources.
+
+Refresh the data and publish the report to Power BI Service.
+
+🌍 Live Demo
+
+🔗 View on GitHub
+
+(Add Power BI Service link here if published online)
+
+👨‍💻 Author
+
+Ritesh Kumar
+📧 ritesh@example.com (replace with your actual contact)
+📂 GitHub Profile
+
+📜 License
+
+This project is open-source and available under the MIT License.
