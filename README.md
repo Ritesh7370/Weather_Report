@@ -12,7 +12,7 @@ This Power BI report presents a **7-day weather forecast** combined with **air q
 
 ## 📸 Dashboard Screenshot
 
-![Weather Dashboard](https://github.com/Ritesh7370/Weather_Report/blob/main/assets/Screenshot_WeatherDashboard.png?raw=true)
+![Weather Dashboard](https://github.com/Ritesh7370/Weather_Report/blob/main/Screenshot_WeatherDashboard.png?raw=true)
 
 > *(If the image doesn’t appear, check that the screenshot file is uploaded to the `/assets` folder in your GitHub repo.)*
 
