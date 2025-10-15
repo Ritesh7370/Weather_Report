@@ -7,7 +7,8 @@ Screenshot
 
 
 
-Replace ./assets/screenshot.png with your actual screenshot file.
+Replace ![Dashboard Screenshot](./assets/Screenshot_WeatherDashboard.png)
+
 
 Key Features
 
@@ -128,7 +129,7 @@ This repository is released under the MIT License. See LICENSE for details.
 
 Contact
 
-Maintainer: Your Name — your.email@example.com
+Maintainer: Your Name — rraaz73700@gmail.com
 
 If you want, I can also:
 
