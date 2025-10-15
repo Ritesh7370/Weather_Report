@@ -7,7 +7,8 @@ Screenshot
 
 
 
-Replace ![Dashboard Screenshot](./assets/Screenshot_WeatherDashboard.png)
+ **Live Dashboard:** [View on Power BI Service](https://app.powerbi.com/links/your-dashboard-link)
+
 
 
 Key Features
